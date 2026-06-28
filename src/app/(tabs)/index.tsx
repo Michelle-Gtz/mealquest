@@ -24,10 +24,10 @@ export default function HomeScreen() {
 
   return (
     <ScrollView style={globalStyles.container}>
-      <Text style={globalStyles.title}>MacroZone</Text>
+      <Text style={globalStyles.title}>MealQuest</Text>
       <HomeHeader />
-      <MacroGrid />
-      <RecentMeals meals={meals} />
+      <MacroGrid meals={meals} />
+      <RecentMeals meals={meals} onDelete={loadMeals} />
     </ScrollView>
   );
 }

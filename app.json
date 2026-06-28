@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "macrozone",
-    "slug": "macrozone",
+    "name": "mealquest",
+    "slug": "mealquest",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
