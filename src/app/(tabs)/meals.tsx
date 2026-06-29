@@ -1,6 +1,6 @@
 import MealItem from "@/components/MealItem";
 import { clearAllMeals, getMeals, Meal } from "@/storage/meals";
-import { globalStyles } from "@/styles/global";
+import { colors, globalStyles } from "@/styles/global";
 import { useFocusEffect } from "expo-router";
 import { useCallback, useState } from "react";
 import { ScrollView, Text, TouchableOpacity, View } from "react-native";
@@ -56,7 +56,7 @@ export default function AllMealsScreen() {
 
 const styles = {
   clearButton: {
-    color: "red",
+    color: colors.error,
     fontSize: 16,
   },
 };

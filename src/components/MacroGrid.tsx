@@ -1,4 +1,5 @@
 import { Meal } from "@/storage/meals";
+import { colors } from "@/styles/global";
 import { StyleSheet, View } from "react-native";
 import MacroCard from "./MacroCard";
 
@@ -23,25 +24,25 @@ export default function MacroGrid({ meals }: MacroGridProps) {
         label="Calories"
         value={`${totals.calories}`}
         goal="2,000"
-        color="#ff6b6b"
+        color={colors.accent}
       />
       <MacroCard
         label="Protein"
         value={`${totals.protein}g`}
         goal="150g"
-        color="#4ecdc4"
+        color={colors.secondary}
       />
       <MacroCard
         label="Carbs"
         value={`${totals.carbs}g`}
         goal="250g"
-        color="#ffd93d"
+        color={colors.primary}
       />
       <MacroCard
         label="Fat"
         value={`${totals.fat}g`}
         goal="65g"
-        color="#6bcb77"
+        color={colors.success}
       />
     </View>
   );

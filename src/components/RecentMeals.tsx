@@ -1,4 +1,5 @@
 import { Meal } from "@/storage/meals";
+import { colors } from "@/styles/global";
 import { StyleSheet, Text, View } from "react-native";
 import MealItem from "./MealItem";
 
@@ -37,11 +38,11 @@ const styles = StyleSheet.create({
   sectionTitle: {
     fontSize: 18,
     fontWeight: "600",
-    color: "#ffffff",
+    color: colors.text,
     marginBottom: 16,
   },
   empty: {
-    color: "#a0a0b0",
+    color: colors.textSecondary,
     fontSize: 14,
   },
 });

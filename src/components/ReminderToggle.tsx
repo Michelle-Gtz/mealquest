@@ -1,6 +1,7 @@
 import { colors } from "@/styles/global";
 import {
   cancelMealReminders,
+  isNotificationsAvailable,
   requestPermissions,
   scheduleMealReminders,
 } from "@/utils/notifications";
@@ -22,6 +23,7 @@ export default function ReminderToggle() {
   }, []);
 
   const toggle = async (value: boolean) => {
+    if (!isNotificationsAvailable) return;
     if (value) {
       const granted = await requestPermissions();
       if (!granted) return;
@@ -35,10 +37,16 @@ export default function ReminderToggle() {
 
   return (
     <View style={styles.container}>
-      <Text style={styles.label}>Meal Reminders</Text>
+      <View style={styles.labelGroup}>
+        <Text style={styles.label}>Meal Reminders</Text>
+        {!isNotificationsAvailable && (
+          <Text style={styles.note}>Requires development build</Text>
+        )}
+      </View>
       <Switch
         value={enabled}
         onValueChange={toggle}
+        disabled={!isNotificationsAvailable}
         trackColor={{ false: colors.surface, true: colors.primary }}
       />
     </View>
@@ -52,8 +60,16 @@ const styles = StyleSheet.create({
     alignItems: "center",
     marginTop: 30,
   },
+  labelGroup: {
+    flex: 1,
+  },
   label: {
     color: colors.text,
     fontSize: 16,
+  },
+  note: {
+    color: colors.textSecondary,
+    fontSize: 12,
+    marginTop: 2,
   },
 });

@@ -1,6 +1,6 @@
 {
   "expo": {
-    "name": "mealquest",
+    "name": "MealQuest",
     "slug": "mealquest",
     "version": "1.0.0",
     "orientation": "portrait",
@@ -17,7 +17,8 @@
         "backgroundImage": "./assets/images/android-icon-background.png",
         "monochromeImage": "./assets/images/android-icon-monochrome.png"
       },
-      "predictiveBackGestureEnabled": false
+      "predictiveBackGestureEnabled": false,
+      "package": "com.michgtz.mealquest"
     },
     "web": {
       "output": "static",
@@ -26,11 +27,19 @@
     "plugins": [
       "expo-router",
       [
+        "expo-notifications",
+        {
+          "icon": "./assets/images/icon.png",
+          "color": "#208AEF"
+        }
+      ],
+      [
         "expo-splash-screen",
         {
-          "backgroundColor": "#208AEF",
+          "backgroundColor": "#34C759",
+          "image": "./assets/images/splash-icon.png",
+          "resizeMode": "contain",
           "android": {
-            "image": "./assets/images/splash-icon.png",
             "imageWidth": 76
           }
         }
